@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="icon" href="{{url_for('static', filename='assets/icons/icon1.png')}}" type="image/x-icon">
+    <title>Task Master</title>
+</head>
+<body>
+    
+      <header>
+           <nav class="navbar" role="navigation" aria-label="Main Navigation" >
+            <h1 class="task_master">Task Master</h1>  
+            <ul class="navbar__list">
+                <li class="navbar__item"><a class="navbar__link" href="{{ url_for('index') }}">Home</a></li>
+                <li class="navbar__item"><a class="navbar__link" href="{{ url_for('register') }}">Register</a></li>
+                <li class="navbar__item"><a class="navbar__link" href="{{ url_for('login') }}">Login</a></li>
+              </ul>
+           </nav>
+      </header>
+      
+    <div class="container">
+      <div class="title">
+        <h1 class="main__title">Task Master</h1>
+      </div>
+
+      <div class="para">
+        <p class="main__para">Task master is nice tool for you to put all your tasks buddy.</p>
+      </div>
+
+      <div class="get__started">
+        <a class="start__button" href="{{ url_for('register') }}">Get Started</a>
+      </div>
+    </div>
+</body> 
+</html>

@@ -1,0 +1,366 @@
+* {
+    --primary-color: rgb(24, 18, 18);
+    --secondary-color: white;
+    --thirdly-color: rgb(196, 10, 10);
+    --fifthly-color: #521111;
+}
+
+body {
+    padding: 0;
+    margin: 0; 
+    font-family: krub;  
+    background-color: var(--primary-color);
+} 
+
+/*styling the main project title*/
+.task_master {
+    margin-right: 350px;
+    padding-top: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+    border-radius: 20px;
+    color: var(--thirdly-color);
+}
+
+
+/*styling index (Home apage)*/
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 100px;
+    background-color: var(--primary-color);
+    border-bottom: 10px solid;
+    border-radius: 20px;
+}
+
+.navbar__list {
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+    text-decoration: none;
+}
+
+.navbar__item {
+    list-style: none;
+    border-radius: 2px solid;
+    padding: 20px;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: var(--secondary-color);
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 20px;
+}
+
+.navbar__link:hover {
+    background-color: var(--thirdly-color);
+}
+
+.container {
+    display: flex;
+    padding: 40px;
+    margin: 40px;
+}
+
+.title {
+    margin: 20px;
+    padding: 20px;
+    font-size:2rem;
+    color: var(--thirdly-color);
+    border-bottom: 10px solid;
+    border-radius: 20px;
+    border-color: var(--secondary-color);
+    text-shadow:
+        2px 2px 0 #ff6f61,
+        4px 4px 0 #4e130b,
+        6px 6px 0 #ffc8b2;
+}
+
+.para {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 100px;
+    padding: 50px;
+    color: var(--secondary-color);
+}
+
+.main__para {
+    margin-left: 15rem;
+    font-size: 20px;
+}
+
+.get__started {
+   margin-left: 100px;
+   margin-top: 20rem;
+   padding: 20px;
+   position: absolute;
+   background-color: var(--thirdly-color);
+   border-radius: 20px;
+}
+
+.start__button {
+    text-decoration: none;
+    color: var(--secondary-color);
+    margin: 20px;
+    font-weight: bolder;
+}
+
+.get__started:hover {
+    background-color: var(--fifthly-color);
+}
+
+/*styling register section*/
+.container__form {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+    padding: 50px;
+}
+
+.main__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px;
+    border: 2px solid;
+    border-bottom: 10px solid;
+    border-right: 10px solid;
+    border-radius: 20px;
+    width: 50%; /* Adjust width as needed */
+    max-width: 600px; /* Set a max-width for larger screens */
+}
+
+.register__title {
+    font-size: 2.4rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%; /* Center-align title */
+}
+
+.form__group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.label {
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 15px;
+    width: 150px; /* Fixed width for label to align inputs */
+    text-align: left; /* Left-align text within label */
+    padding-right: 10px;
+}
+
+.input__label {
+    margin-left: 50px;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 10px;
+    width: 100%; /* Ensure input fills the remaining space */
+    max-width: 300px; /* Control input width */
+}
+
+.register__button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--thirdly-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    align-self: center; /* Center-align button */
+}
+
+.register__button:hover {
+    background-color: var(--fifthly-color);
+}
+
+
+/* Centering the form container */
+.login__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Styling the form */
+.login__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px;
+    border: 2px solid;
+    border-bottom: 10px solid;
+    border-right: 10px solid;
+    border-radius: 20px;
+    width: 50%;
+    max-width: 400px; /* Adjust the max-width */
+}
+
+/* Title styling */
+.login__title {
+    font-size: 2.4rem;
+    color: var(--secondary-color);
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Container for label and input pairing */
+.form__group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Styling the label */
+.login__label {
+    font-weight: bold;
+    font-size: 15px;
+    width: 120px; /* Fixed width for alignment */
+    text-align: left;
+    padding-right: 10px;
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+/* Styling the input */
+.login__input {
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 250px; /* Set max-width for inputs */
+    margin: 0;
+}
+
+/* Button styling */
+.login__button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    align-self: center;
+    color: var(--secondary-color);
+    background-color: var(--thirdly-color);
+}
+
+.login__button:hover {
+    background-color: var(--fifthly-color);
+}
+
+/*styling tasks page (Task Creation Form)*/
+.tasky__title {
+    display: flex;
+    justify-content: center;
+    color: var(--secondary-color); 
+    font-size: 40px;
+}
+
+.task__title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form__task {
+    display: flex;
+    margin-left: 300px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px;
+    border: 2px solid;
+    border-bottom: 10px solid;
+    border-right: 10px solid;
+    border-radius: 20px;
+    width: 50%; 
+}
+
+.task__label {
+    color: var(--secondary-color);
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.task__input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 40px;
+}
+
+.task__button {
+    background-color: var(--thirdly-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    margin-left: 22rem;
+    border-radius: 4px;
+}
+
+.task__button:hover {
+    background-color: var(--fifthly-color);
+}
+
+.task__buttons {
+    margin-top: 10px;
+}
+
+
+/*styling tasks page (Task List Section)*/
+.task__tite {
+    display: flex;
+    justify-content: center;
+    color: var(--secondary-color);
+    font-size: 40px;
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+.task__list {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 300px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px;
+    border: 2px solid;
+    border-bottom: 10px solid;
+    border-right: 10px solid;
+    border-radius: 20px;
+    width: 50%; 
+}
+
+.task__edit-button,
+.task__delete-button,
+.task__complete-button {
+    margin-right: 5px;
+    background-color: var(--thirdly-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+.task__edit-button,
+.task__delete-button,
+.task__complete-button:hover {
+    background-color: var(--fifthly-color);
+}

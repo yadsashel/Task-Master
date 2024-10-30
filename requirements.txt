@@ -1,0 +1,5 @@
+Flask==2.0.1
+pymongo[srv]
+redis
+flask_cors
+gunicorn

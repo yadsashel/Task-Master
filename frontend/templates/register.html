@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="icon" href="{{url_for('static', filename='assets/icons/icon1.png')}}" type="image/x-icon">
+    <title>Register</title>
+</head>
+<body>
+     
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main Navigation" >
+          <h1 class="task_master">Task Master</h1>
+          <ul class="navbar__list">
+             <li class="navbar__item"><a class="navbar__link" href="{{ url_for('index') }}">Home</a></li>
+             <li class="navbar__item"><a class="navbar__link" href="{{ url_for('register') }}">Register</a></li>
+             <li class="navbar__item"><a class="navbar__link" href="{{ url_for('login') }}">Login</a></li>
+           </ul>
+        </nav>
+   </header>     
+
+    <!-- Register Form -->
+<div class="container__form">
+    <form class="main__form" action="#" method="post">
+        <h1 class="register__title">Register</h1>
+
+        <div class="form__group">
+            <label class="label" for="username">Username:</label>
+            <input class="input__label" type="text" id="username" name="username" placeholder="Create Your Username" required>
+        </div>
+
+        <div class="form__group">
+            <label class="label" for="email">Email:</label>
+            <input class="input__label" type="email" id="email" name="email" placeholder="Enter Your Email" required>
+        </div>
+
+        <div class="form__group">
+            <label class="label" for="password">Password:</label>
+            <input class="input__label" type="password" id="password" name="password" placeholder="Create Your Password" required>
+        </div>
+
+        <div class="form__group">
+            <label class="label" for="confirm-password">Confirm Password:</label>
+            <input class="input__label" type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Your Password" required>
+        </div>
+
+        <input class="register__button" type="submit" value="Register">
+    </form>
+</div>
+
+</body>
+</html>
