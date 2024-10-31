@@ -3,7 +3,7 @@ import sys
 from flask import Flask, render_template, url_for, request, redirect, jsonify
 from bson import ObjectId
 from flask_cors import CORS 
-from config import get_db_connection 
+from config import get_db_connection
 
 
 #creating flask app
