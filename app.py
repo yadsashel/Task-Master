@@ -7,7 +7,7 @@ from config import get_db_connection
 
 
 #creating flask app
-app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static')
+app = Flask(__name__)
 CORS(app)
 
 #establishing the database connection
