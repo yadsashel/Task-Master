@@ -3,6 +3,6 @@ services:
     name: taskmaster-backend
     env: python
     buildCommand: "pip install -r backend/requirements.txt"
-    startCommand: "gunicorn backend.app:app --bind 0.0.0.0:10000"
+    startCommand: "gunicorn app:app --bind 0.0.0.0:10000"
     plan: free
     runtime: python3
