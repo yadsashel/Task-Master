@@ -3,11 +3,12 @@ import sys
 from flask import Flask, render_template, url_for, request, redirect, jsonify
 from bson import ObjectId
 from flask_cors import CORS 
-from backend.config import get_db_connection
+from config import get_db_connection
 
 
 #creating flask app
 app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static')
+CORS(app)
 
 #establishing the database connection
 db = get_db_connection()
@@ -36,7 +37,7 @@ def tasks():
     return render_template('tasks.html')
 
 #add a task and store it in the mongodb
-@app.route('/api/tasks', method=['POST'])
+@app.route('/api/tasks', methods=['POST'])
 def add_task():
     data = request.json
     new_task = {
@@ -50,7 +51,7 @@ def add_task():
     return jsonify(new_task), 201
 
 #feth a task and displayed it in the frontend
-@app.route('/api/tasks', method=['GET'])
+@app.route('/api/tasks', methods=['GET'])
 def get_task():
     tasks = list(task_collection.find())
     for task in tasks:
@@ -58,7 +59,7 @@ def get_task():
     return jsonify(tasks), 200
 
 #edit a task
-@app.route('/tasks<task_id>', method=['PUT'])
+@app.route('/tasks<task_id>', methods=['PUT'])
 def edit_task():
     # Step 1: Get the data from the request
     data = request.json
