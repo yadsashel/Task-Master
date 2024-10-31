@@ -35,9 +35,6 @@ def login():
 def tasks():
     return render_template('tasks.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
 #add a task and store it in the mongodb
 @app.route('/api/tasks', method=['POST'])
 def add_task():
@@ -78,3 +75,5 @@ def edit_task():
     else:
         return jsonify({'message': 'No Changes Made Or Task Not Found'}), 404
     
+if __name__ == '__main__':
+    app.run(debug=True)
