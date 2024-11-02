@@ -11,6 +11,7 @@ def get_db_connection():
     if not uri:
         raise ValueError("MONGODB_URI not set in .env file")
     
+    # Initialize MongoDB client with URI
     client = MongoClient(uri, tlsAllowInvalidCertificates=True)  # Allow insecure SSL
     db = client['taskmaster_db']  # Specify your database name
     return db
