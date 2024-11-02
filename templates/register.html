@@ -23,9 +23,22 @@
         </nav>
    </header>     
 
+
+     <!-- Flash Messages -->
+     {% with messages = get_flashed_messages() %}
+     {% if messages %}
+       <div class="flash-container">
+         {% for message in messages %}
+           <div class="flash">{{ message }}</div>
+         {% endfor %}
+       </div>
+     {% endif %}
+   {% endwith %}
+   
+
     <!-- Register Form -->
 <div class="container__form">
-    <form class="main__form" action="#" method="post">
+    <form class="main__form" action="/register" method="POST">
         <h1 class="register__title">Register</h1>
 
         <div class="form__group">
@@ -44,8 +57,8 @@
         </div>
 
         <div class="form__group">
-            <label class="label" for="confirm-password">Confirm Password:</label>
-            <input class="input__label" type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Your Password" required>
+            <label class="label" for="confirm_password">Confirm Password:</label>
+            <input class="input__label" type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Your Password" required>
         </div>
 
         <input class="register__button" type="submit" value="Register">

@@ -24,11 +24,23 @@
         </nav>
    </header>
 
+   
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash-container">
+          {% for message in messages %}
+            <div class="flash">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
 
    <!--- login page --->
 
    <div class="login__container">
-    <form class="login__form" action="#" method="post">
+    <form class="login__form" action="/login" method="POST">
         <h1 class="login__title">Login</h1>
         
         <div class="form__group">
@@ -41,7 +53,7 @@
             <input class="login__input" type="password" id="password" name="password" placeholder="Enter Your Password" required>
         </div>
         
-        <input class="login__button" type="button" value="Login">
+        <input class="login__button" type="submit" value="Login">
     </form>
 </div>
 

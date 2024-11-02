@@ -364,3 +364,42 @@ body {
 .task__complete-button:hover {
     background-color: var(--fifthly-color);
 }
+
+.flash-container {
+    position: fixed; /* Make it fixed so it stays in view */
+    top: 20px; /* Adjust the distance from the top */
+    right: 20px; /* Adjust the distance from the right */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.flash {
+    font-family: krub;
+    font-weight: bold;
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb; /* Border color */
+    padding: 10px 20px; /* Padding around the message */
+    margin-bottom: 10px; /* Space between messages */
+    border-radius: 40px; /* Rounded corners */
+    animation: slide-in 0.5s ease-in-out forwards, fade-out 0.5s 2.5s forwards; /* Animation */
+}
+
+/* Slide-in animation */
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Fade-out animation */
+@keyframes fade-out {
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}

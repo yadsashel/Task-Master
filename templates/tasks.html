@@ -24,7 +24,16 @@
         </nav>
    </header>
    
-  
+       <!-- Flash Messages -->
+     {% with messages = get_flashed_messages() %}
+     {% if messages %}
+       <div class="flash-container">
+         {% for message in messages %}
+           <div class="flash">{{ message }}</div>
+         {% endfor %}
+       </div>
+     {% endif %}
+   {% endwith %}
    
     <h1 class="tasky__title">Your Daily Planner</h1>
 
