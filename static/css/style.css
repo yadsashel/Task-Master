@@ -47,15 +47,29 @@ body {
 
 .navbar__link {
     text-decoration: none;
-    color: var(--secondary-color);
-    border-radius: 20px;
-    font-size: 15px;
+    border-radius: 40px;
+    background-color: var(--thirdly-color);
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+   -webkit-transition: all 0.5s;
     font-weight: bolder;
     padding: 20px;
+    position: relative;
 }
 
 .navbar__link:hover {
     background-color: var(--thirdly-color);
+    box-shadow: 0 0 20px var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.navbar__link:active {
+    background-color: var(--thirdly-color);
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
 }
 
 .container {
@@ -65,17 +79,39 @@ body {
 }
 
 .title {
-    margin: 20px;
-    padding: 20px;
-    font-size:2rem;
-    color: var(--thirdly-color);
-    border-bottom: 10px solid;
+    margin: 20px; /* Space around the title */
+    padding: 20px; /* Space inside the title */
+    font-size: 2rem; /* Font size */
+    color: var(--thirdly-color); /* Initial text color */
+    border-bottom: 3px solid var(--secondary-color);
     border-radius: 20px;
-    border-color: var(--secondary-color);
     text-shadow:
-        2px 2px 0 #ff6f61,
-        4px 4px 0 #4e130b,
-        6px 6px 0 #ffc8b2;
+        2px 2px 0 #ff6f61, /* Shadow effect */
+        4px 4px 0 #4e130b, /* Deeper shadow */
+        6px 6px 0 #ffc8b2; /* Soft shadow for a glowing effect */
+    position: relative; /* Enable positioning for the floating effect */
+    animation: float 3s ease-in-out infinite; /* Apply floating animation */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Start position */
+        color: var(--thirdly-color); /* Keep the initial color */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up */
+        color: #ff9154; /* Change to a different color halfway */
+    }
+    100% {
+        transform: translateY(0); /* Return to start position */
+        color: var(--thirdly-color); /* Return to original color */
+    }
+}
+
+.title:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 20px var(--secondary-color);
+    transform: scale(1.1);
 }
 
 .para {
@@ -93,23 +129,75 @@ body {
 }
 
 .get__started {
-   margin-left: 100px;
-   margin-top: 20rem;
-   padding: 20px;
-   position: absolute;
-   background-color: var(--thirdly-color);
-   border-radius: 20px;
+    margin-left: 100px; /* Keeps the left margin as before */
+    margin-top: 20rem; /* Keeps the top margin as before */
+    padding: 20px; /* Padding around the button */
+    position: absolute; /* Keeps the absolute positioning */
 }
 
-.start__button {
-    text-decoration: none;
-    color: var(--secondary-color);
-    margin: 20px;
-    font-weight: bolder;
+.liquid_shape {
+    padding: 30px;
+    cursor: pointer; /* Changes the cursor to pointer on hover */
+    background: linear-gradient(45deg, #c44800 0%, #ff0059 100%); /* Gradient background */
+    width: 10em; /* Width of the button */
+    height: 5em; /* Height of the button */
+    box-shadow: 
+        0 0 20px rgba(0, 0, 0, 0.2), /* Shadow effect */
+        0 0 40px rgba(255, 0, 89, 0.5); /* Shadow effect */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; /* Round corners for the liquid effect */
+    position: relative; /* Allows for the absolute positioning of pseudo-elements */
+    overflow: hidden; /* Hides overflow from the button shape */
+    color: var(--secondary-color); /* White text color */
+    font-size: 1.5em; /* Font size for the text */
+    font-weight: bold;
+    letter-spacing: 0.1em; /* Spacing between letters */
+    animation: 
+        liquid 6s ease-in-out infinite, /* Liquid animation */
+        float 3s ease-in-out infinite; /* Floating effect */
+    transition: 
+        transform 0.5s ease, /* Smooth transition for scale */
+        box-shadow 0.5s ease; /* Smooth transition for box shadow */
+    outline: none; /* No outline on focus */
+    text-decoration: none; /* Removes underline from the link */
 }
 
-.get__started:hover {
-    background-color: var(--fifthly-color);
+.liquid_shape:hover {
+    transform: scale(1.2); /* Scales up the button on hover */
+    box-shadow: 
+        0 0 30px rgba(0, 0, 0, 0.3), /* Darker shadow on hover */
+        0 0 50px rgba(255, 0, 89, 0.575); /* Brighter shadow on hover */
+    animation-duration: 12s, 6s; /* Slower animations on hover */
+}
+
+.liquid_shape:active {
+    transform: scale(0.9); /* Scales down on click */
+    box-shadow: 
+        0 0 15px rgba(0, 0, 0, 0.7), /* Dark shadow when active */
+        0 0 30px rgba(255, 0, 89, 0.8); /* Bright shadow when active */
+}
+
+@keyframes liquid {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        background-size: 100% 100%; /* Initial background size */
+    }
+    55% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; /* Change shape during animation */
+        background-size: 300% 150%; /* Change background size during animation */
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; /* Return to original shape */
+        background-size: 100% 100%; /* Return to original background size */
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at original position */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up at the middle of the animation */
+    }
 }
 
 /*styling register section*/
@@ -401,5 +489,97 @@ body {
     to {
         opacity: 0;
         transform: translateY(-20px);
+    }
+}
+
+
+/* Mobile Styles: Target screen widths 768px and below */
+@media (max-width: 768px) {
+    /* Navbar adjustments for mobile */
+    .navbar {
+        padding-bottom: 70px;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: var(--primary-color);
+    }
+
+    .task_master {
+        padding-left: 138px;
+        border: none;
+        font-size: 1.5rem; /* Scale down the main title */
+        margin: 0; /* Center title on mobile */
+    }
+
+    .navbar__list {
+        display: none; /* Hide by default on mobile */
+        flex-direction: column;
+        width: 100%; /* Full-width dropdown */
+        padding: 0;
+    }
+
+    .navbar__item {
+        padding: 10px;
+        
+    }
+
+    .navbar__link {
+        display: block;
+        font-size: 1rem;
+        padding: 10px;
+        width: 50%;
+        text-align: center;
+    }
+
+    /* Hamburger menu */
+    .hamburger {
+        display: flex;
+        padding-top: 40px;
+        padding-left: 37px;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0;
+    }
+
+    /* Toggle the navbar menu visibility */
+    .navbar__list.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    /* Main content adjustments for mobile */
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .title, .para, .get__started {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .main__para {
+        padding-top: 48px;
+        font-size: 1rem; /* Smaller text on mobile */
+        margin: 0; /* Center the paragraph */
+    }
+
+    /* Get Started button */
+    .get__started {
+        padding-top: 60px;
+        margin: 20px 0; /* Center the button on mobile */
+        position: static;
+    }
+
+    .liquid_shape {
+        width: 8em; /* Scale button down for mobile */
+        height: 4em;
+        font-size: 1.2em;
+        padding: 20px;
     }
 }

@@ -12,70 +12,65 @@
 </head>
 <body>
   
-
     <header>
-        <nav class="navbar" role="navigation" aria-label="Main Navigation" >
+        <nav class="navbar" role="navigation" aria-label="Main Navigation">
             <h1 class="task_master">Task Master</h1>
             <ul class="navbar__list">
-             <li class="navbar__item"><a class="navbar__link" href="{{ url_for('index') }}">Home</a></li>
-             <li class="navbar__item"><a class="navbar__link" href="{{ url_for('register') }}">Register</a></li>
-             <li class="navbar__item"><a class="navbar__link" href="{{ url_for('login') }}">Login</a></li>
-           </ul>
+                <li class="navbar__item"><a class="navbar__link" href="{{ url_for('index') }}">Home</a></li>
+                <li class="navbar__item"><a class="navbar__link" href="{{ url_for('register') }}">Register</a></li>
+                <li class="navbar__item"><a class="navbar__link" href="{{ url_for('login') }}">Login</a></li>
+            </ul>
         </nav>
-   </header>
+    </header>
    
-       <!-- Flash Messages -->
-     {% with messages = get_flashed_messages() %}
-     {% if messages %}
-       <div class="flash-container">
-         {% for message in messages %}
-           <div class="flash">{{ message }}</div>
-         {% endfor %}
-       </div>
-     {% endif %}
-   {% endwith %}
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="flash-container">
+            {% for message in messages %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
    
     <h1 class="tasky__title">Your Daily Planner</h1>
 
-<!-- Task Creation Form -->
-<section class="task__creation">
-    <form class="form__task" id="taskForm">
-        <label class="task__label" for="title">Title</label>
-        <input class="task__input" type="text" id="title" name="title" placeholder="Enter task title" required>
+    <!-- Task Creation Form -->
+    <section class="task__creation">
+        <form class="form__task" id="taskForm">
+            <label class="task__label" for="title">Title</label>
+            <input class="task__input" type="text" id="title" name="title" placeholder="Enter task title" required>
 
-        <label class="task__label" for="description">Description</label>
-        <textarea class="task__input" id="description" name="description" placeholder="Enter task description"></textarea>
+            <label class="task__label" for="description">Description</label>
+            <textarea class="task__input" id="description" name="description" placeholder="Enter task description"></textarea>
 
-        <label class="task__label" for="dueDate">Due Date</label>
-        <input class="task__input" type="date" id="dueDate" name="dueDate" required>
+            <label class="task__label" for="dueDate">Due Date</label>
+            <input class="task__input" type="date" id="dueDate" name="dueDate" required>
 
-        <button class="task__button" type="submit">Add Task</button>
-    </form>
-</section>
+            <button class="task__button" type="submit">Add Task</button>
+        </form>
+    </section>
 
-<!-- Task List Section -->
-<h2 class="task__tite">Task List</h2>
-
-<section class="task__list">
-    <div id="taskList">
-        {% for task in tasks %}
-        <div class="task" id="task-{{ task['_id'] }}">
-            <h3 class="task__item-title">{{ task['title'] }}</h3>
-            <p class="task__item-description">{{ task['description'] }}</p>
-            <p class="task__item-due">Due: {{ task['due_date'] }}</p>
-            <div class="task__buttons">
-                <button class="task__edit-button" onclick="editTask('{{ task['_id'] }}')">Edit</button> 
-                <button class="task__delete-button" onclick="deleteTask('{{ task['_id'] }}')">Delete</button>
-                <button class="task__complete-button" onclick="toggleComplete('{{ task['_id'] }}')">Complete</button>
+    <!-- Task List Section -->
+    <h2 class="task__title">Task List</h2>
+    <section class="task__list">
+        <div id="taskList">
+            {% for task in tasks %}
+            <div class="task" id="task-{{ task['_id'] }}">
+                <h3 class="task__item-title">{{ task['title'] }}</h3>
+                <p class="task__item-description">{{ task['description'] }}</p>
+                <p class="task__item-due">Due: {{ task['due_date'] }}</p>
+                <div class="task__buttons">
+                    <button class="task__edit-button"  type="submit" onclick="editTask('{{ task['_id'] }}')">Edit</button> 
+                    <button class="task__delete-button"  type="submit" onclick="deleteTask('{{ task['_id'] }}')">Delete</button>
+                    <button class="task__complete-button" type="submit" onclick="toggleComplete('{{ task['_id'] }}')">Complete</button>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
-</section>
-
+    </section>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
-     
 </body>
 </html>
