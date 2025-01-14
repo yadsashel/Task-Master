@@ -1,7 +1,7 @@
 * {
-    --primary-color: rgb(24, 18, 18);
-    --secondary-color: white;
-    --thirdly-color: rgb(196, 10, 10);
+    --primary-color: #181212;
+    --secondary-color: #ffffff;
+    --thirdly-color: #c40a0a;
     --fifthly-color: #521111;
 }
 
@@ -359,8 +359,11 @@ body {
 }
 
 .task__title {
+    font-size: 3rem;
     text-align: center;
+    margin-right: 150px;
     margin-bottom: 20px;
+    color: var(--secondary-color);
 }
 
 .form__task {
@@ -392,6 +395,7 @@ body {
 }
 
 .task__button {
+    cursor: pointer;
     background-color: var(--thirdly-color);
     color: var(--secondary-color);
     font-weight: bold;
@@ -412,32 +416,53 @@ body {
 
 
 /*styling tasks page (Task List Section)*/
-.task__tite {
+.task__title {
     display: flex;
     justify-content: center;
+    margin-left: 100px;
     color: var(--secondary-color);
     font-size: 40px;
-    margin-top: 40px;
-    margin-left: 15px;
 }
 
 .task__list {
     display: flex;
-    margin-top: 50px;
-    margin-left: 300px;
+    margin-top: 20px;
+    margin-left: 350px;
     flex-direction: column;
     align-items: flex-start;
-    padding: 100px;
+    padding: 70px;
+    padding-right: 30px;
+    padding-left: 30px;
     border: 2px solid;
     border-bottom: 10px solid;
     border-right: 10px solid;
     border-radius: 20px;
     width: 50%; 
+    color: rgb(66, 225, 230);
+}
+
+.taskato {
+    margin-left: 12rem;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    background-color: rgb(66, 225, 230);
+}
+
+.task__item-title {
+    color: rgb(135, 0, 0);
+}
+   
+.task__item-description,
+.task__item-due {
+    color: var(--primary-color);
+    font-weight: bolder;
 }
 
 .task__edit-button,
-.task__delete-button,
-.task__complete-button {
+.task__delete-button {
+    cursor: pointer;
     margin-right: 5px;
     background-color: var(--thirdly-color);
     color: var(--secondary-color);
@@ -447,9 +472,31 @@ body {
     border-radius: 4px;
 }
 
-.task__edit-button,
-.task__delete-button,
+.task__complete-button {
+    cursor: pointer;
+    margin-right: 5px;
+    background-color: var(--thirdly-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
 .task__complete-button:hover {
+    background-color: var(--fifthly-color);
+}
+
+.task__edit-button,
+.task__delete-button {
+    background-color: var(--thirdly-color);
+}
+
+.task__edit-button:hover {
+    background-color: var(--fifthly-color);
+}
+
+.task__delete-button:hover {
     background-color: var(--fifthly-color);
 }
 
@@ -582,4 +629,150 @@ body {
         font-size: 1.2em;
         padding: 20px;
     }
+
+    /* Registration and Login Form adjustments */
+    .container__form,
+    .login__container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .main__form,
+    .login__form {
+        padding: 30px;
+        width: 200%;
+        max-width: 350px;
+        border: 2px solid;
+        border-bottom: 5px solid;
+        border-right: 5px solid;
+    }
+
+    .register__title,
+    .login__title {
+        font-size: 1.8rem;
+    }
+
+    .label,
+    .login__label {
+        width: 100px;
+    }
+
+    .input__label,
+    .login__input {
+        max-width: 100%;
+    }
+
+    .register__button,
+    .login__button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    /* Task Creation and List Sections */
+    .form__task,
+    .task__list {
+        margin: 20px;
+        padding: 30px;
+        width: 100%;
+        max-width: 400px;
+        border: 2px solid;
+        border-bottom: 5px solid;
+        border-right: 5px solid;
+    }
+
+    .task__title,
+    .task__tite {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .task__button {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Title Styling */
+    .task__title {
+        font-size: 1.8rem; /* Adjust font size */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Task Creation Form */
+    .form__task {
+        margin: 0 auto;
+        padding: 20px;
+        width: 90%; /* Full width on mobile */
+        border: 1px solid #ccc;
+    }
+
+    .task__input {
+        width: 93%; /* Full width for mobile */
+        padding: 12px;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .task__button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.2rem;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    /* Task List Section */
+    .task__list {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+        flex-direction: column;
+        border: 1px solid var(--primary-color);
+        border-radius: 20px;
+    }
+
+    .taskato {
+        margin-left: -2rem;
+    }
+
+    .task {
+        padding: 20px;
+        padding-right: 50px;
+        padding-top: 50px;
+        margin-top: 20px;
+        border: 1px solid var(--primary-color);
+        border-radius: 20px;
+        margin-bottom: 10px;
+        background-color: var(--primary-color);
+    }
+
+    .task__item-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: rgb(173, 133, 22);
+    }
+
+    .task__item-description, .task__item-due {
+        font-size: 1rem;
+        color: var(--secondary-color);
+    }
+
+    .task__buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .task__edit-button,
+    .task__delete-button,
+    .task__complete-button {
+        width: 32%; /* Each button takes up one-third of the row */
+        font-size: 1rem;
+        padding: 8px;
+        padding-right: 25px;
+    }
+
 }

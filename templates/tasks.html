@@ -15,7 +15,7 @@
     <header>
         <nav class="navbar" role="navigation" aria-label="Main Navigation">
           <h1 class="task_master">Task Master</h1>  
-          <div class="hamburger" onclick="toggleMenu()">
+          <div type="checkbox" class="hamburger" onclick="toggleMenu()">
               <div class="bar"></div>
               <div class="bar"></div>
               <div class="bar"></div>
@@ -60,7 +60,7 @@
     <!-- Task List Section -->
     <h2 class="task__title">Task List</h2>
     <section class="task__list">
-        <div id="taskList">
+        <div id="taskList" class="taskato">
             {% for task in tasks %}
             <div class="task" id="task-{{ task['_id'] }}">
                 <h3 class="task__item-title">{{ task['title'] }}</h3>
